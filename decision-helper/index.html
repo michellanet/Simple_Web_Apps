@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<title>Decision Helper</title>
+	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="chrome=1"><![endif]-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<link rel="shortcut icon" href="img/logo.png">
+	<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+	<link rel="dns-prefetch" href="http://ajax.googleapis.com/">
+	<link rel="dns-prefetch" href="http://html5shim.googlecode.com/">
+	<link rel="dns-prefetch" href="http://google-analytics.com/">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cantarell">
+	
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="css.css">
+	
+	<!--[if IE]><link href="http://www.3818.com.ar/styles/fix-old-ie.css" media="all" type="text/css" rel="stylesheet">
+<![endif]-->
+	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59852500-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<!--[if IE]>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+    <style>.chromeFrameInstallDefaultStyle { width: 100%; border: 5px solid #ffa700; }</style><div id="prompt"></div>
+    <script>window.attachEvent("onload", function() {CFInstall.check({mode: "overlay", node: "prompt"});});</script>
+<![endif]-->
+
+<div id='header'>Decision Helper</div>
+<div id='form'>
+<div id="title">
+<p id='titletext'>A decision whether to</p>
+<div id="desc"><input type="text" id="description"></div>
+</div>
+
+<div id="do">
+<p id='dodesc'>Add positive effect(s) if DONE</p>
+<div class="addbtn"><input id='doadd' type="button" value="+" onclick="Effect.add('dolist','doitem')"></div>
+<div id="dolistcover"><div id="dolist"></div></div>
+</div>
+
+<div  id="dont">
+<p id='dontdesc'>Add positive effect(s) if NOT DONE or taking another action</p>
+<div class="addbtn"><input  id='dontadd' type="button" value="+" onclick="Effect.add('dontlist','dontitem')"></div>
+<div id="dontlistcover"><div id="dontlist"></div></div>
+</div>
+
+<div id='actions'>
+<input type="button" value="Analyse" id='analyse' onclick='Submit.submit()'>
+<input  id='reset' type="button" value="Reset" onclick='Effect.reset()'>
+</div>
+</div>
+
+<div id="output">
+<p id='microinfo'></p>
+<p class='info'></p>
+<p class='info'></p>
+<p class='info'></p>
+</div>
+
+
+<div class="itemobject" style="display:none">
+<input class='reason' type="text">
+<select class='rating'>
+    <option class='rate' value='5'>Important</option>
+    <option class='rate' value='4'>Necessary</option>
+    <option class='rate' value='2'>Want</option>
+    <option class='rate' value='1'>Forgo</option>
+  </select>
+  <input class='cancel' type="button" value="X" onclick="Effect.remove(this.id)">
+</div>
+
+
+<div id="list" style="display:none"></div>
+
+
+<script type="text/javascript" src="frontend.js"></script>
+</body>
+</html>

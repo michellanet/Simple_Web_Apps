@@ -1,0 +1,62 @@
+@media only screen and (max-device-width: 400px){
+#wrapper {
+	width: 400px;
+	position: absolute;
+	height: auto;
+	left: 1px;
+	top: 1px;
+	color: #FFFFFF;
+	background-color: #CFCFCF;
+}
+
+#app {
+	position: relative;
+	width: 362px;
+	height: 400px;
+	padding: 5px;
+	left: 0px;
+	top: 0px;
+	background-color: #5F5F5F;
+	border-top-width: medium;
+	border-top-style: solid;
+	color: #E5E5E5;
+	border-top-color: #424242;
+	-webkit-transition: all 0.7s;
+	-moz-transition: all 0.7s;
+	-ms-transition: all 0.7s;
+	-o-transition: all 0.7s;
+	transition: all 0.7s;
+}
+
+#page2 {
+	font-size: 12px;
+	padding: 5px;
+	position: relative;
+	width: 360px;
+	height: 60px;
+	overflow: hidden;
+	transition: 0.7s;
+	border-right-width: medium;
+	border-bottom-width: medium;
+	border-left-width: medium;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #919191;
+	border-bottom-color: #919191;
+	border-left-color: #919191;
+	color: #D9D9D9;
+	background-color: #5F5F5F;
+	border-top-color: #919191;
+	right: 0px;
+	border-bottom-right-radius:90px;
+}
+
+		
+#logo {
+	position: relative;
+	width: 255px;
+	height: 76px;
+	left: 25px;
+}
+}

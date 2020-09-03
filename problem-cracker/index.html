@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Problem Cracker</title>
+
+<script type="text/javascript"
+src="jquery-3.1.1.min.js"></script>
+
+<link href="mobile.css" rel="stylesheet" type="text/css"/>
+
+<style type="text/css">
+
+html *{
+	margin: 0px;
+	padding: 0px;
+	/*font-weight: bold;*/
+	font-family: Tahoma, Geneva, sans-serif;
+	}
+
+div{
+	border:0px;
+border-color:gray;
+border-style:solid;
+}
+
+.display {
+	display: inline-block;
+}
+
+#wrapper {
+	position: relative;
+	width: auto;
+	overflow: hidden;
+	margin-right: 15px;
+	margin-left: 15px;
+	padding: 10px;
+	box-shadow:0 2px 10px rgba(102,102,102,1);
+}
+
+#status {
+	position: relative;
+	height: auto;
+	width: auto;
+}
+#wrapper #view {
+	position: relative;
+	width: 100%;
+	height: 250px;
+}
+#wrapper #major-minor {
+	position: relative;
+	height: 100%;
+	width: auto;
+	overflow:hidden;
+}
+
+#wrapper #major-minor #major {
+	position: relative;
+	height: 100%;
+	width: auto;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+#wrapper #major-minor #minor {
+	position: relative;
+	height: 100%;
+	width: auto;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+	
+	#statusdiv{
+		white-space:nowrap;
+	position: relative;
+	overflow-x: auto;
+	padding: 5px;
+	margin-top: 15px;
+	margin-right: 15px;
+	margin-left: 15px;
+	box-shadow: 0 2px 10px rgba(102,102,102,1);
+	
+	display: -webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	align-items:center;
+	}
+	
+	
+#wrapper #view #pform {
+	position: relative;
+	overflow: hidden;
+	display:none;
+	text-align:center;
+}
+#wrapper #view #rform {
+	position: relative;
+	overflow: hidden;
+	display:none;
+	text-align:center;
+}
+.rstatus {
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+	height: 70px;
+	width: 70px;
+	overflow: hidden;
+	background-color: #FFF;
+	margin: 4px;
+	padding: 2px;
+}
+
+#statusdiv #pmum {
+	border-radius: 50%;
+	height: 70px;
+	width: 70px;
+	overflow: hidden;
+	background-color: #FFF;
+	margin: 4px;
+	padding: 2px;
+	box-shadow:0 2px 10px rgba(102,102,102,1);
+	align-self:center;
+}
+
+ .db{
+	height: 0px;
+	width: 0px;
+	overflow:hidden;
+	}
+.domain {
+	margin-top: 10px;
+}
+h1 {
+	font-family: "Comic Sans MS", cursive;
+	font-size: 36px;
+	font-weight: bold;
+	color: #090;
+	overflow: hidden;
+	text-shadow: 0 2px 10px #0033FF;
+	text-align: center;
+	
+	-webkit-box-flex:1;
+	-moz-box-flex:1;
+	-webkit-flex:1;
+	-ms-flex:1;
+	flex:1;
+}
+button {
+	border: 0px;
+	box-shadow:0 2px 10px rgba(102,102,102,1);
+}
+
+.divider {
+	background-color: #0CF;
+	padding: 10px;
+	overflow: hidden;
+	margin-bottom: 10px;
+	position: relative;
+	border-radius: 5%;
+	box-shadow: 0 2px 10px rgba(102,102,102,1);
+	text-align: center;
+	
+	align-items:center;
+}
+img{
+	overflow: hidden;
+	box-shadow:0 2px 10px rgba(102,102,102,1);
+}
+header {
+	padding-bottom:10px;
+	padding-top:10px;
+	padding-left:10px;
+	padding-right:10px;
+	margin-right: 15px;
+	margin-left: 15px;
+	margin-bottom: 10px;
+	box-shadow: 0 2px 10px rgba(102,102,102,1);
+
+	display: -webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+	
+	align-items:center;
+	}
+ .textfield {
+	/*width:500px;*/
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	padding: 10px;
+	margin-top:10px;
+	
+	-webkit-box-flex:1;
+	-moz-box-flex:1;
+	-webkit-flex:1;
+	-ms-flex:1;
+	flex:1;
+}
+ .btn {
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	padding: 10px;
+	margin-top:10px;
+}
+
+.singletextfield {
+	/*width:500px;*/
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	padding: 10px;
+	margin-top:10px;
+	
+	-webkit-box-flex:1;
+	-moz-box-flex:1;
+	-webkit-flex:1;
+	-ms-flex:1;
+	flex:1;
+}
+ .singlebtn {
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	padding: 10px;
+	margin-top:10px;
+}
+
+label {
+	margin-right: 50px;
+}
+.inputs{
+	display: -webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+	}
+#wrapper #resultbtn {
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	padding: 10px;
+	margin-top:10px;
+	display: none;
+	overflow: hidden;
+}
+#wrapper #view #result {
+	position: relative;
+	overflow: hidden;
+	display:none;
+}
+#wrapper #view #result #cover {
+	position: relative;
+	overflow: hidden;
+	text-align:justify;
+}
+#wrapper #view #result #cover .para{
+	display: -webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+	overflow:hidden;	
+	}
+	
+	#wrapper #view #result #cover .span{
+	overflow: hidden;
+	margin-bottom: 10px;
+	}
+	
+	#wrapper #view #result #cover .numspan{
+	margin-right: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	}
+	
+	#wrapper #view #result #cover #topic{
+	margin-left: 20px;
+	margin-bottom: 10px;
+	border-bottom-style: solid;
+	border-top-color: #CCC;
+	border-bottom-width: thin;
+	position: relative;
+	padding-bottom: 3px;
+		}
+		
+		label{
+		white-space:nowrap;
+		}
+
+</style>
+<head>
+<body>
+<header>
+<img name="logo" src="images/logo.jpg" width="32" height="32" alt="puzzle" />
+<h1>Problem Cracker</h1>
+</header>
+<div id="wrapper">
+<div id="view" class="display">
+
+
+<div id="pform">
+
+<div class="divider">
+<p>GIVE A TITLE OF THE PROBLEM</p>
+<div class="inputs">
+<input class="textfield" name="ptitle" id="ptitle" type="text" size="30" />
+<input class="btn" name="okptitle" type="button" value="OK" id="okptitle" onclick="p.settitle()"/></div>
+</div>
+
+<div class="divider">
+<p>ADD ALL KNOWN POSSIBLE REASON FOR THIS PROBLEM ONE BY ONE</p>
+<div class="inputs">
+<input class="textfield" name="newreason" id="newreason" type="text" size="30" />
+<input class="btn" name="addnewreason" type="button" value="ADD" id="addnewreason" onclick="p.add(); p.setrtitle()"/></div>
+</div>
+<p><input class="singlebtn" name="pdone" type="button" value="DONE" id="pdone" onclick="done('pform','pmum'), pformreset(), statusfocus(), checkcolor()"/></p>
+</div>
+
+
+<div id="rform">
+
+<div class="divider">
+<p>CLICK REMOVE TO UNDO THIS REASON</p>
+<input class="singlebtn" name="remove" type="button" value="REMOVE" id="remove" onclick="R.remove()"/>
+</div>
+
+<div class="divider">
+<p>TO EDIT THIS REASON</p>
+<div class="inputs">
+<input class="textfield" id="edit" name="edit" type="text" size="30" />
+<input class="btn" name="modify" type="button" value="MODIFY" id="modify" onclick="R.modify()"/>
+</div>
+</div>
+
+<div class="divider">
+<p>DO YOU THINK YOU HAVE THE SOLUTION TO TURN THIS REASON AROUND?</p>
+
+  <label>
+    <input type="radio" name="RadioGroup" value="yes" id="RadioGroup_0" onclick="rgroup(this.id)" />
+    YES</label>
+    
+      <label>
+    <input type="radio" name="RadioGroup" value="no" id="RadioGroup_1" onclick="rgroup(this.id)" />
+    NO</label>
+    
+    <label>
+    <input type="radio" name="RadioGroup" value="insolvable" id="RadioGroup_2" onclick="rgroup(this.id)" />    NEITHER YES NOR NO</label>
+    </div>
+    
+    <div class="divider">
+    <p>SUMMERIZE THE SOLUTION IN THE INPUT BOX BELOW.</p>
+   
+<div class="inputs">
+<input class="textfield" name="solution" type="text" size="30"  disabled="disabled"/>
+<input class="btn" name="yesok" type="button" value="OK" id="yesok" disabled="disabled" onclick="yesok(), uprootchild(), green(this.id)"/>
+</div>
+  </div>
+  
+<div class="divider">
+    <p>ADD ALL KNOWN POSSIBLE REASON FOR THIS PROBLEM ONE BY ONE</p>
+   
+<div class="inputs">
+<input class="textfield" name="solution" type="text" size="30" disabled="disabled"/>
+<input class="btn" name="noadd" type="button" value="ADD" id="noadd" disabled="disabled" onclick="R.add(), R.setrtitle(), nook(), yellow(this.id)"/>
+</div>
+</div>
+  
+  <div class="divider">
+<div class="inputs">
+<input class="singletextfield" name="insolvable" type="text" disabled="disabled" value="OUT OF USER'S CONTROL" size="35" readonly="readonly"/>
+</div>
+</div>
+  
+<p><input class="singlebtn" name="rdone" type="button" value="DONE" id="rdone" onclick="done('rform','rmum'), rformreset(), checkcolor(), statusfocus()"/></p>
+</div>
+<div id="result"></div>
+
+<input type="button" value="SHOW RESULT" id="resultbtn" onclick="showresult(), populate()"/>
+
+</div>
+
+
+
+</div>
+
+
+<div id="statusdiv">
+<div>
+<button class="pstatus status" id="pmum" onclick="show(this.id), clicked(this.id), formfocus()"></button>
+<div class="display" id="pkids">
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="domain" class="domain" style="display:none"></div>
+
+<button class="rstatus status" id="rmum" name="rbtn" onclick="show(this.id), clicked(this.id), formfocus()" disabled="disabled" style="display:none"></button>
+
+<div class="rkids" id="rkids" style="display:none"></div>
+<div id="db" class="db" style="display:none"></div>
+<input type="text" class="dbtitle" id="dbtitle"style="display:none" size="1" readonly="readonly"/>
+<input type="text" class="dbsolution" id="dbsolution" style="display:none" size="1" readonly="readonly"/>
+
+
+
+
+
+<script type="text/javascript" src="problem.js"></script>
+<script type="text/javascript" src="general.js"></script>
+<script type="text/javascript" src="reason.js"></script>
+<script type="text/javascript" src="notify.js"></script>
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Transcript Generator</title>
+
+<style type="text/css">
+<!--
+.style2 {
+	font-size: 10px;
+	font-style: italic;
+}
+.style3 {color: #FFFFFF}
+.style4 {font-size: 12px}
+.style5 {font-size: 12px; font-weight: bold; }
+
+#wrapper form #app #fs1 {
+	position: relative;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #464646;
+	border-right-color: #464646;
+	border-bottom-color: #464646;
+	border-left-color: #464646;
+	background-color: #4A4A4A;
+}
+#wrapper form #app #fs2 {
+	position: relative;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #888888;
+	border-bottom-color: #888888;
+	border-left-color: #888888;
+	border-top-style: solid;
+	border-top-color: #888888;
+}
+#wrapper #page2 #opt {
+	position: absolute;
+	bottom: 0px;
+	width: 355px;
+}
+
+#wrapper #page2 div{
+	background-color: #5F5F5F;
+}
+#wrapper #page2 #scroll {
+	overflow-y: auto;
+	position: relative;
+	top: 0px;
+	background-color: #828282;
+	padding-top:10px;
+}
+#wrapper #hide {
+	overflow: hidden;
+	position: relative;
+	height: 0px;
+	width: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-color: #636363;
+	color: #606060;
+	border-top-color: #A2A2A2;
+	border-right-color: #A2A2A2;
+	border-bottom-color: #A2A2A2;
+	border-left-color: #A2A2A2;
+}
+#wrapper {
+	width: 900px;
+	position: absolute;
+	height: 500px;
+	left: 1px;
+	top: 1px;
+	color: #FFFFFF;
+	background-color: #CFCFCF;
+}
+#app {
+	position: absolute;
+	width: 362px;
+	height: 400px;
+	padding: 5px;
+	left: 0px;
+	top: 0px;
+	background-color: #5F5F5F;
+	border-top-width: medium;
+	border-top-style: solid;
+	color: #E5E5E5;
+	border-top-color: #424242;
+	-webkit-transition: all 0.7s;
+	-moz-transition: all 0.7s;
+	-ms-transition: all 0.7s;
+	-o-transition: all 0.7s;
+	transition: all 0.7s;
+}
+#app table {
+	font-size: 12px;
+}
+#logo {
+	position: absolute;
+	bottom: 0px;
+	width: 255px;
+	height: 76px;
+	left: 223px;
+}
+#page2 {
+	font-size: 12px;
+	padding: 5px;
+	position: absolute;
+	width: 360px;
+	height: 60px;
+	overflow: hidden;
+	transition: 0.7s;
+	border-right-width: medium;
+	border-bottom-width: medium;
+	border-left-width: medium;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #919191;
+	border-bottom-color: #919191;
+	border-left-color: #919191;
+	color: #D9D9D9;
+	background-color: #5F5F5F;
+	border-top-color: #919191;
+	right: 0px;
+	border-bottom-right-radius:90px;
+}
+#wrapper #setcourse {
+	position: absolute;
+	width: 70px;
+	height: 642px;
+	padding: 10px;
+}
+
+
+body {
+	color: #FFF;
+}
+#scroll div {
+	cursor: default;
+}
+.input{
+	background-color: #5A5A5A;
+	border: 1px solid #6D6D6D;
+	box-shadow: 1px 1px 1px 0 lightgray inset;
+	width: 200px;
+	overflow: hidden;
+	font-family: -webkit-small-control;
+	height: 25px;
+	padding-top: 6px;
+	padding-right: 3px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	border-radius: 15px;
+	font-size: medium;
+	color: #D6D6D6;
+	}
+	.btn{
+	border: 1px solid;
+	box-shadow: 1px 1px 1px 0 lightgray inset;
+	width: 70px;
+	overflow: hidden;
+	font-family: -webkit-small-control;
+	height: 25px;
+	padding-top: 5px;
+	padding-right: 3px;
+	padding-bottom: 3px;
+	padding-left: 3px;
+	border-radius: 10px;
+	font-size: medium;
+	text-align: center;
+	vertical-align: middle;
+	cursor: default;
+	}
+	#add{
+		border-color: #0069D2;
+		}
+	#remove{
+		border-color:#FF2828;
+		}
+	#submit{
+		border-color:#0F0
+		}
+	.innerinput{
+	background-color: #5A5A5A;
+	border: 1px solid #6D6D6D;
+	box-shadow: 1px 1px 1px 0 lightgray inset;
+	width: 80px;
+	overflow: hidden;
+	font-family: -webkit-small-control;
+	height: 25px;
+	padding-top: 6px;
+	padding-right: 3px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	border-radius: 15px;
+	font-size: medium;
+	margin-left:5px;
+	color: #D6D6D6;
+	margin-top:7px;
+	}
+	.block{
+		display:inline-block;
+		}
+		.data{
+	color: #D5D5D5;
+	background-color: #5F5F5F;
+	border-radius: 15px;
+	margin-bottom: 15px;
+	margin-right: 6px;
+	margin-left: 4px;
+	height:50px;
+			}
+			.count{
+				background-color: #5A5A5A;
+	border: 1px solid #6D6D6D;
+	box-shadow: 1px 1px 1px 0 lightgray inset;
+	width: 30px;
+	overflow: hidden;
+	font-family: -webkit-small-control;
+	height: 25px;
+	padding-top: 6px;
+	padding-right: 3px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	border-radius: 15px;
+	font-size: medium;
+	color: #FFFFFF;
+	}
+	
+.select{
+				background-color: #5A5A5A;
+	border: 1px solid #6D6D6D;
+	box-shadow: 1px 1px 1px 0 lightgray inset;
+	width: 60px;
+	overflow: hidden;
+	font-family: -webkit-small-control;
+	height: 32px;
+	padding-top: 6px;
+	padding-right: 3px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	border-radius: 15px;
+	font-size: medium;
+	color: #FFFFFF;
+	}
+	
+				}
+-->
+</style>
+<link href="mobile.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="wrapper">
+<form action="result.php" method="post" id="result">
+  <div id="app" class="block"> 
+    <fieldset id="fs1">
+    <legend class="style2">STUDENT INFO</legend>
+    <table width="302" cellspacing="10" >
+    <tr>
+      <th width="86" scope="row">SCHOOL:</th>
+      <td width="144"><input class="input" name="sch" type="text" id="sch" maxlength="35" /></td>
+    </tr>
+    <tr>
+      <th scope="row">FACULTY:</th>
+      <td><input class="input" name="fac" type="text" id="fac" maxlength="35" /></td>
+    </tr>
+    <tr>
+      <th scope="row">DEPARTMENT:</th>
+      <td><input class="input" name="dept" type="text" id="dept" maxlength="35" /></td>
+    </tr>
+    <tr>
+      <th scope="row">NAME:</th>
+      <td><input class="input" name="name" type="text" id="name" maxlength="35" /></td>
+    </tr>
+    <tr>
+      <th scope="row">GENDER:</th>
+      <td><p>
+        <label>
+          <input type="radio" name="gen" value="MALE" id="RadioGroup1_0" />
+          MALE</label>
+        <br />
+        <label>
+          <input type="radio" name="gen" value="FEMALE" id="RadioGroup1_1"/>
+          FEMALE</label>
+        <br />
+      </p></td>
+    </tr>
+  </table>
+    </fieldset>
+    <fieldset id="fs2">
+    <table width="200" cellspacing="10" >
+  <tr>
+    <th scope="row"><p>GRADING POINT:</p></th>
+    <td><select name="gp" id="gp" class="select">
+      <option>4</option>
+    </select>
+        </td>
+        <td><input class="count" name="counter" size="2" readonly="readonly"></input></td>
+  </tr>
+</table>
+</fieldset>
+  </div>
+  
+  <div id="page2" onclick="page2()" class="block">
+  <div id="scroll">  </div>
+  <div id="opt">
+  <table border="0" align="center">
+  <tr id="control">
+    <th scope="col"><div class="btn" id="add" type="button" onmouseup="release(this.id)" onmousedown="inputclick(this.id)" onclick="add(); ">ADD</div></th>
+    <th scope="col"><div class="btn" id="remove" type="button" onmouseup="release(this.id)"  onmousedown="inputclick(this.id)" onclick="undo(); ">REMOVE</div></th>
+    <th scope="col"><div class="btn" id="submit" onmouseup="release(this.id)" onmousedown="inputclick(this.id)" onclick="submitresult(); ">SUBMIT</div>
+</div></th>
+  </tr>
+</table>
+
+  
+  
+  
+  </div>
+  </form>
+  
+  <div id="hide">
+  <div class="data" id="line" onclick="select(this.id)" >
+<input class="innerinput" type="text" value="CODE" size="11" maxlength="6"  onclick="text(this.id)"/>
+      &nbsp; &nbsp;<strong class="block">SCORE:</strong>
+      <select class="block select">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+        <option>13</option>
+        <option>14</option>
+        <option>15</option>
+        <option>16</option>
+        <option>17</option>
+        <option>18</option>
+        <option>19</option>
+        <option>20</option>
+        <option>21</option>
+        <option>22</option>
+        <option>23</option>
+        <option>24</option>
+        <option>25</option>
+        <option>26</option>
+        <option>27</option>
+        <option>28</option>
+        <option>29</option>
+        <option>30</option>
+        <option>31</option>
+        <option>32</option>
+        <option>33</option>
+        <option>34</option>
+        <option>35</option>
+        <option>36</option>
+        <option>37</option>
+        <option>38</option>
+        <option>39</option>
+        <option>40</option>
+        <option>41</option>
+        <option>42</option>
+        <option>43</option>
+        <option>44</option>
+        <option>45</option>
+        <option>46</option>
+        <option>47</option>
+        <option>48</option>
+        <option>49</option>
+        <option>50</option>
+        <option>51</option>
+        <option>52</option>
+        <option>53</option>
+        <option>54</option>
+        <option>55</option>
+        <option>56</option>
+        <option>57</option>
+        <option>58</option>
+        <option>59</option>
+        <option>60</option>
+        <option>61</option>
+        <option>62</option>
+        <option>63</option>
+        <option>64</option>
+        <option>65</option>
+        <option>66</option>
+        <option>67</option>
+        <option>68</option>
+        <option>69</option>
+        <option>70</option>
+        <option>71</option>
+        <option>72</option>
+        <option>73</option>
+        <option>74</option>
+        <option>75</option>
+        <option>76</option>
+        <option>77</option>
+        <option>78</option>
+        <option>79</option>
+        <option>80</option>
+        <option>81</option>
+        <option>82</option>
+        <option>83</option>
+        <option>84</option>
+        <option>85</option>
+        <option>86</option>
+        <option>87</option>
+        <option>88</option>
+        <option>89</option>
+        <option>90</option>
+        <option>91</option>
+        <option>92</option>
+        <option>93</option>
+        <option>94</option>
+        <option>95</option>
+        <option>96</option>
+        <option>97</option>
+        <option>98</option>
+        <option>99</option>
+        <option>100</option>
+      </select>
+  &nbsp;&nbsp; <strong class="block ">UNIT:</strong>
+  <select class="block select">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+  </select>
+  </div></div>
+</div>
+<div id="logo">
+    <table width="254" cellspacing="10" cellpadding="10">
+  <tr>
+    <td width="107" height="55"><strong>Powered By......</strong></td>
+    <td width="75"><img src="image/star.gif" alt="ANETOR" name="star" width="66" height="66" class="style3" id="star" style="background-color: #FFFFFF" /></td>
+  </tr>
+</table>
+</div>
+<script type="text/javascript" src="gpcalc.js"></script>
+</body>
+</html>
+
